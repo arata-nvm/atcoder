@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "hash_map": "cpp",
+    "bitset": "cpp",
+    "chrono": "cpp",
+    "iostream": "cpp",
+    "*.tcc": "cpp",
+    "string": "cpp",
+    "numeric": "cpp",
+    "ostream": "cpp"
+  }
+}
