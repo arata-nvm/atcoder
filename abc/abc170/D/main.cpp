@@ -23,7 +23,28 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  int n, a, c = 0;
+  cin >> n;
+  vector<ll> v;
+  REP(i, n) {
+    cin >> a;
+    v.push_back(a);
+  }
+  SORT(v);
 
+  REP(i, n) {
+    if (i < n && v[i] == v[i + 1]) continue;
+    FOR(j, 0, i + 1) {
+      if (i == j) {
+        c++;
+      }
+      if (v[i] % v[j] == 0) {
+        break;
+      }
+    }
+  }
+
+  cout << c << endl;
 
   return 0;
 }

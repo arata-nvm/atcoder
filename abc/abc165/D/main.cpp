@@ -19,11 +19,21 @@ using ull = unsigned long long int;
 
 const ll MOD = 1000000007;
 
+ll f(ll a, ll b, ll x) {
+  return floor(a * x / (double) b) - a * floor(x / (double) b);
+}
+
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  ll a, b, n, mv = 0, v;
+  cin >> a >> b >> n;
 
+  if (b <= n)
+    cout << f(a, b, b - 1) << endl;
+  else
+    cout << f(a, b, n) << endl;
 
   return 0;
 }

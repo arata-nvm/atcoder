@@ -2,7 +2,6 @@
 
 using namespace std;
 using ll = long long int;
-using ull = unsigned long long int;
 #define vll vector<ll>
 
 #define FOR(i, b, e) for(int i = (b); i < (e); ++i)
@@ -23,7 +22,14 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  ll n, m, a, as = 0;
+  cin >> n >> m;
+  REP(i, m) {
+    cin >> a;
+    as += a;
+  }
 
+  cout << max(n - as, -1ll) << endl;;
 
   return 0;
 }

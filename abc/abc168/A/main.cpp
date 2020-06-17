@@ -23,7 +23,13 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  string n;
+  cin >> n;
 
+  char s1 = n[n.length() - 1];
+  if (s1 == '2' || s1 == '4' || s1 == '5' || s1 == '7' || s1 == '9') cout << "hon" << endl;
+  else if (s1 == '0' || s1 == '1' || s1 == '6' || s1 == '8') cout << "pon" << endl;
+  else cout << "bon" << endl;
 
   return 0;
 }

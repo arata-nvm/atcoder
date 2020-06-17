@@ -2,7 +2,6 @@
 
 using namespace std;
 using ll = long long int;
-using ull = unsigned long long int;
 #define vll vector<ll>
 
 #define FOR(i, b, e) for(int i = (b); i < (e); ++i)
@@ -23,7 +22,24 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  ll n, r = 0, g = 0, b = 0, c;
+  string s;
+  cin >> n >> s;
+  REP(i, n) {
+    if (s[i] == 'R') r++;
+    else if (s[i] == 'G') g++;
+    else  b++;
+  }
 
+  c = r * g * b;
+
+  REP(i, n) FOR(j, i + 1, n) {
+    ll k = 2 * j - i;
+    if (k >= n || s[i] == s[j] || s[i] == s[k] || s[j] == s[k]) continue;
+    c--;
+  }
+
+  OUT(c);
 
   return 0;
 }

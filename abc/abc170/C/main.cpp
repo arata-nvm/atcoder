@@ -23,7 +23,25 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  int x, n, p;
+  cin >> x >> n;
 
+  set<ll> v;
+  REP(i, n) {
+    cin >> p;
+    v.insert(p);
+  }
+
+  int mx = 1000, xx = 1;
+
+  FOR(i, 0, 102) {
+    if (v.find(i) == v.end() && abs(x - i) < mx) {
+      mx = min(abs(x - i), mx);
+      xx = i;
+    }
+  }
+
+  cout << xx << endl;
 
   return 0;
 }

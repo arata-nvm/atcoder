@@ -2,7 +2,6 @@
 
 using namespace std;
 using ll = long long int;
-using ull = unsigned long long int;
 #define vll vector<ll>
 
 #define FOR(i, b, e) for(int i = (b); i < (e); ++i)
@@ -23,7 +22,9 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
-
+  long double x;
+  cin >> x;
+  cout << 2 * M_PI * x << endl;
 
   return 0;
 }

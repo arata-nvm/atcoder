@@ -23,7 +23,12 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  ll k;
+  string s;
+  cin >> k >> s;
 
+  if (s.length() <= k) cout << s;
+  else cout << s.substr(0, k)  << "..." << endl;
 
   return 0;
 }

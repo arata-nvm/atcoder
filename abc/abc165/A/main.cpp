@@ -23,7 +23,17 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  ll k, a, b;
+  cin >> k >> a >> b;
 
+  FOR(i, a, b + 1) {
+    if (i % k == 0) {
+      cout << "OK" << endl;
+      return 0;
+    }
+  }
+
+  cout << "NG" << endl;
 
   return 0;
 }

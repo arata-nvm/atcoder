@@ -23,7 +23,12 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  long double a, b;
+  cin >> a >> b;
 
+  ll r = a * b;
+
+  cout << r << endl;
 
   return 0;
 }

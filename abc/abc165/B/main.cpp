@@ -23,7 +23,15 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  ll x, c = 100, n = 0;
+  cin >> x;
 
+  while (c < x) {
+    c *= 1.01;
+    n++;
+  }
+
+  cout << n << endl;
 
   return 0;
 }

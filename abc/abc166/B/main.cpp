@@ -23,7 +23,24 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  ll n, k, d, a;
+  cin >> n >> k;
+  set<ll> s;
 
+  REP(i, k) {
+    cin >> d;
+    REP(j, d) {
+      cin >> a;
+      s.insert(a);
+    }
+  }
+
+  ll c = 0;
+  REP(i, n) {
+    if (s.find(i + 1) == s.end()) c++;
+  }
+
+  cout << c << endl;
 
   return 0;
 }

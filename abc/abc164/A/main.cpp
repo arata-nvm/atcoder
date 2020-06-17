@@ -23,7 +23,10 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
-
+  ll s, w;
+  cin >> s >> w;
+  if (s <= w) cout << "unsafe" << endl;
+  else cout << "safe" << endl;
 
   return 0;
 }

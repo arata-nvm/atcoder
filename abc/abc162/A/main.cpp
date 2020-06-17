@@ -2,7 +2,6 @@
 
 using namespace std;
 using ll = long long int;
-using ull = unsigned long long int;
 #define vll vector<ll>
 
 #define FOR(i, b, e) for(int i = (b); i < (e); ++i)
@@ -23,7 +22,10 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
-
+  string s;
+  cin >> s;
+  if (s[0] == '7' || s[1] == '7' || s[2] == '7') cout << "Yes" << endl;
+  else cout << "No" << endl;
 
   return 0;
 }

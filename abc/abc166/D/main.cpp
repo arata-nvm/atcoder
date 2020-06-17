@@ -19,11 +19,37 @@ using ull = unsigned long long int;
 
 const ll MOD = 1000000007;
 
+
+
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  ll a = 0, b = 0, ap, bp, x;
+  cin >> x;
 
+  while (true) {
+    ap = pow(a, 5);
+    bp = pow(b, 5);
+    if (ap - bp == x) break;
+    if (bp - ap == x) {
+      a *= -1;
+      b *= -1;
+      break;
+    }
+
+    if (ap - x > bp) {
+      // a++ / b--
+      if (abs(pow(a + 1, 5) - x - bp) > abs(ap - x - pow(b - 1, 5))) b--;
+      else a++;
+    } else if (ap - x < bp) {
+      // a-- / b++
+      if (abs(pow(a - 1, 5) - x - bp) > abs(ap - x - pow(b + 1, 5))) b++;
+      else a--;
+    }
+  }
+
+  cout << a << " " << b << endl;
 
   return 0;
 }

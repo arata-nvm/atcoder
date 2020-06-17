@@ -19,11 +19,40 @@ using ull = unsigned long long int;
 
 const ll MOD = 1000000007;
 
+ll n, m, q, ms = 0;
+ll a[51][4];
+
+ll check(vector<ll> c) {
+  ll s = 0;
+  REP(i, q) {
+    if (c[a[i][1] - 1] - c[a[i][0] - 1] == a[i][2]) s += a[i][3];
+  }
+  return s;
+}
+
+void f(vector<ll> c) {
+  if (c.size() == n) {
+    ms = max(check(c), ms);
+  } else {
+    ll s = (c.size() != 0 ? c[c.size() - 1] : 1);
+    FOR(i, s, m + 1) {
+      c.push_back(i);
+      f(c);
+      c.pop_back();
+    }
+  }
+}
+
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  cin >> n >> m >> q;
+  REP(i, q) cin >> a[i][0] >> a[i][1] >> a[i][2] >> a[i][3];
 
+  vector<ll> c;
+  f(c);
 
+  cout << ms << endl;
   return 0;
 }

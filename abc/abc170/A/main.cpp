@@ -23,7 +23,14 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
-
+  int x;
+  REP(i, 5) {
+    cin >> x;
+    if (x == 0) {
+      cout << i + 1 << endl;
+      return 0;
+    }
+  }
 
   return 0;
 }

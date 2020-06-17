@@ -23,7 +23,16 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  int x, y;
+  cin >> x >> y;
 
+  FOR(i, 0, x + 1) {
+    if (i * 2 + (x - i) * 4 == y) {
+      cout << "Yes" << endl;
+      return 0;
+    }
+  }
+  cout << "No" << endl;
 
   return 0;
 }

@@ -23,7 +23,20 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  unsigned long long n, a, as = 1;
+  cin >> n;
 
+  REP(i, n) {
+    cin >> a;
+    as *= a;
+    if (as > 1000000000000000000) {
+      as = -1;
+      break;
+    }
+  }
+
+
+  cout << as << endl;
 
   return 0;
 }

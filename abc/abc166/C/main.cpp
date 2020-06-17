@@ -23,7 +23,27 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  ll n, m, a, b;
+  cin >> n >> m;
+  ll h[n], hh[n];
+  REP(i, n) {
+    cin >> h[i];
+    hh[i] = -1;
+  }
+  REP(i, m) {
+    cin >> a >> b;
+    a--;
+    b--;
+    hh[a] = max(hh[a], h[b]);
+    hh[b] = max(hh[b], h[a]);
+  }
 
+  ll c = 0;
+  REP(i, n) {
+    if (h[i] > hh[i] || hh[i] == -1) c++;
+  }
+
+  cout << c << endl;
 
   return 0;
 }
